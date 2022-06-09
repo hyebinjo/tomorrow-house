@@ -1,0 +1,53 @@
+$flex-map: (
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+  center: center,
+);
+
+@function _get-flex-value($key) {
+  // @if ($key == start) {
+  //   @return flex-start;
+  // }
+  // @if ($key == end) {
+  //   @return flex-end;
+  // }
+  // @if ($key == between) {
+  //   @return space-between;
+  // }
+  // @if ($key == around) {
+  //   @return space-around;
+  // }
+  // @if ($key == stretch) {
+  //   @return stretch;
+  // }
+  // @if ($key == center) {
+  //   @return center;
+  // }
+  @return map-get($flex-map, $key);
+}
+
+@mixin flexbox($jc: center, $ai: center) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin inline-flexbox($jc: center, $ai: center) {
+  display: inline-flex;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin column-flexbox($jc: center, $ai: center) {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+.list {
+  @include flexbox(end, stretch);
+}

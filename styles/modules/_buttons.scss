@@ -35,6 +35,7 @@
 
 .btn-outlined {
   @extend %btn-base;
+  color: $blue;
   background-color: $white;
   border: 1px solid $blue;
   transition: background-color 200ms ease-in-out;
